@@ -2,7 +2,7 @@ version: '3'
 services:
   db:
     image: mysql:5.7
-    container_name: cheers_db
+    container_name: des2a_db
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: des2a
@@ -15,3 +15,14 @@ services:
       - ./docker/mysql/sql:/docker-entrypoint-initdb.d
     ports:
       - '8050:3306'
+  test:
+    image: mysql:5.7
+    container_name: des2a_test_db
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      TZ: 'Asia/Tokyo'
+    ports:
+      - '8051:3306'

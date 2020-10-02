@@ -1,0 +1,23 @@
+default:
+  type: 'mysql'
+  host: 'localhost'
+  port: 8050
+  username: 'test'
+  password: 'test'
+  database: 'des2a'
+  entities: ['src/**/*.entity.{ts,js}']
+  migrations: ['src/migrations/*.{ts,js}']
+  cli:
+    migrationsDir: 'src/migrations'
+
+test:
+  type: 'mysql'
+  host: 'localhost'
+  port: 8051
+  username: 'test'
+  password: 'test'
+  database: 'test'
+  entities: ['src/**/*.entity.{ts,js}']
+  migrations: ['src/migrations/*.{ts,js}']
+  cli:
+    migrationsDir: 'src/migrations'
