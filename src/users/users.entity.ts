@@ -1,11 +1,18 @@
-import { Column, Entity, PrimaryGeneratedColumn, Unique } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { CreateUserDto } from "./users.dto";
 
 @Entity()
-@Unique(['email'])
 export class Users {
+    constructor();
+    constructor(dto: CreateUserDto);
+
+    constructor(dto?: Partial<CreateUserDto>) {
+        Object.assign(this, dto);
+    }
+
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({unique: true})
     email: string;
 }

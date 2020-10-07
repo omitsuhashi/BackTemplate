@@ -5,8 +5,8 @@ default:
   username: 'test'
   password: 'test'
   database: 'des2a'
-  entities: ['src/**/*.entity.{ts,js}']
-  migrations: ['src/migrations/*.{ts,js}']
+  entities: ['dist/**/*.entity.{ts,js}']
+  migrations: ['dist/migrations/*.{ts,js}']
   cli:
     migrationsDir: 'src/migrations'
 
