@@ -34,5 +34,6 @@ describe('UsersController', () => {
 
   afterAll(async ()=> {
     await usersRepository.clear();
+    await usersRepository.manager.connection.close();
   });
 });

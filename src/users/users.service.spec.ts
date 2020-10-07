@@ -40,5 +40,6 @@ describe('UsersService', () => {
 
   afterAll(async () => {
     await repository.clear();
+    await repository.manager.connection.close()
   });
 });
